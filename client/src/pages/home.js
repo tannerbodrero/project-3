@@ -6,7 +6,8 @@ function home () {
         <section>
             <div>
                 <h3>
-                    derek says hi
+                    derek says hi.
+                    today is a beautiful day.
                 </h3>
             </div>
         </section>
