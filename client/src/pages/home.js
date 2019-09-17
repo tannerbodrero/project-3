@@ -6,7 +6,7 @@ function home () {
         <section>
             <div>
                 <h3>
-                    nelson says hi
+                    derek says hi
                 </h3>
             </div>
         </section>
