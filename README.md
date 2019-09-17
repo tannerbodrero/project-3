@@ -4,7 +4,7 @@
 
 ## This will allow the member to post items they want to trade, view other available items, and provide location information for the meetup.
 
-[Check Out The Visual Concept Here](/client/public/Project-3 adobeXD.pdf)
+* [I'm the adobe XD prototype model.](/Project-3.pdf)
 ***
  
 ![TEAM](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcRlke3Xap0OH3BHH8J26paU0P711H6Fmuc-Zf0K7IkVeyeO6v "TEAM ICON")
