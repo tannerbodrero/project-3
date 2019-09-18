@@ -5,9 +5,7 @@
     "details":"Fully grown chicken with great personality",
     "postedBy":"Nelson",
     "email":"nelson@nelson.com",
-    "lookingFor":"Goat, and or Llama",
-
-
+    "lookingFor":"Goat, and or Llama"
 },
 {
     "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUUfs6HLyeyHzp3Gaq2oleMWZ5O4Q3tfdOhTRSDEU2VvCDeV7e",
@@ -16,7 +14,6 @@
     "postedBy":"Derek",
     "email":"nelson@nelson.com",
     "lookingFor":"Rad-X, Radaway"
-
 },
 {
     "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuosfdOh2iCR4Bp9k7LVXvtcvq2PfsBYm235w00bmRFrrkEJVBzw",
@@ -25,7 +22,6 @@
     "postedBy":"Tucker",
     "email":"nelson@nelson.com",
     "lookingFor":"Magikarp"
-
 },
 {
     "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGGKgCEGqzb4rgDMvZaV6sVpM1oe0l97Kmf5mnZLJoj1k3keO",
@@ -34,6 +30,5 @@
     "postedBy":"Nelson",
     "email":"nelson@nelson.com",
     "lookingFor":"PS4"
-
 }
 ]
