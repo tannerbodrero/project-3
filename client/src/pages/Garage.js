@@ -1,16 +1,16 @@
 import React from "react"
 
 
-function Home() {
+function Garage() {
     return (
         <section>
             <div>
                 <h1>
-                    Hello, this is the garage trader Home Page
+                    Welcome to your personal garage!
                 </h1>
             </div>
         </section>
     )
 }
 
-export default Home;
+export default Garage;
