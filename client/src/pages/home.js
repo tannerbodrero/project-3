@@ -1,7 +1,17 @@
 import React from "react"
 
 
-function Home() {
+class Home extends Component {
+  state = {
+      offers: [],
+      img: "",
+      name: "",
+      details: "",
+      postedBy: "",
+      lookingFor: "",
+      email: ""
+  };
+  
     return (
         <section>
             <div>
