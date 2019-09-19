@@ -24,18 +24,7 @@ export function FormBtn(props) {
   );
 }
 
-export function LoginButton(props) {
-  return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-secondary">
-      {props.children}    
-      
-      
-    </button>
-    
-  );
-}
-
-export function SignButton(props) {
+export function SplashBtn(props) {
   return (
     <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-secondary">
       {props.children}    

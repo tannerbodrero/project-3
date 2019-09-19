@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, LoginButton, FormBtn, SignButton } from "../components/Form";
+import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 
 class Books extends Component {
@@ -60,11 +60,11 @@ class Books extends Component {
               <h1>Garage-Trade</h1>
             </Jumbotron>
             <form>
-              <LoginButton
+              <SplashBtn
               onClick={this.toggleHidden.bind(this)}
               >
                 Go to Garage
-              </LoginButton>
+              </SplashBtn>
               {this.state.isHidden ? null :
               <div> Log in
 
@@ -89,11 +89,11 @@ class Books extends Component {
               </div> 
               }
 
-              <SignButton
+              <SplashBtn
               onClick={this.secondHidden.bind(this)}
               >
                 Build your Garage
-              </SignButton>
+              </SplashBtn>
               {this.state.hidden ? null :
               <div> Sign up
 
