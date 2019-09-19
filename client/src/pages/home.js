@@ -1,13 +1,29 @@
 import React from "react"
 
+class Home extends React.Component {
+    state = {
+        offers
+    };
+   
+    componentDidMount() {
+      this.loadItems();
+    }
+   
+    loadOffers = () => {
+      API.getItems()
+        .then(res =>
+          this.setState({ offers: res.data})
+          )
+          .catch(err => console.log(err));
+    };
 
 function Home() {
     return (
         <section>
             <div>
-                <h1>
-                    Hello, this is the garage trader Home Page
-                </h1>
+                this.state.offers.map(
+                    
+                )
             </div>
         </section>
     )
