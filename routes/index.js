@@ -3,6 +3,7 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 
 // API Routes
+// starts from localhost:PORT
 router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app

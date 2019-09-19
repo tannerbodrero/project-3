@@ -1,5 +1,6 @@
 const db = require("../models");
 
+// defining the functions for itemsController
 module.exports = {
   findAll: function(req, res) {
     db.Item
