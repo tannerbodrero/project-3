@@ -42,7 +42,8 @@ const itemSeed = [
   }
 ];
 
-const userSeed = [{
+const userSeed = [
+  {
   name: "Nelson",
   email: "nelson@nelson.com",
   items: []
