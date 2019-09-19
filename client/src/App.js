@@ -1,6 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css"
+import Home from "./pages/Home";
+import Splash from "./pages/Splash";
+import Garage from "./pages/Garage";
+import Nav from "./components/Nav";
+// import "bootstrap/dist/css/bootstrap.min.css"
 // import various pages here
 
 function App() {
@@ -9,9 +13,10 @@ function App() {
             <div>
                 <Nav />
                 <Switch>
-                    <Route />
-                    <Route />
-                    <Route />
+                    <Route exact path="/" component={Splash} />
+                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/splash" component={Splash} />
+                    <Route exact path="/garage" component={Garage} />
                 </Switch>
             </div>
         </Router>
