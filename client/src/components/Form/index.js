@@ -2,7 +2,7 @@ import React from "react";
 
 // This file exports the Input, TextArea, and FormBtn components
 
-
+//Form elements for splash page
 
 export function Input(props) {
   
@@ -24,7 +24,18 @@ export function FormBtn(props) {
   );
 }
 
-export function SplashButton(props) {
+export function LoginButton(props) {
+  return (
+    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-secondary">
+      {props.children}    
+      
+      
+    </button>
+    
+  );
+}
+
+export function SignButton(props) {
   return (
     <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-secondary">
       {props.children}    

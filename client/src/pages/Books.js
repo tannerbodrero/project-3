@@ -5,12 +5,13 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, SplashButton, FormBtn } from "../components/Form";
+import { Input, LoginButton, FormBtn, SignButton } from "../components/Form";
 
 
 class Books extends Component {
   state = {
     isHidden: true,
+    hidden: true,
     username: "",
     password: ""
   };
@@ -22,6 +23,14 @@ class Books extends Component {
       isHidden: !this.state.isHidden
     });
     console.log(this.state.isHidden)
+  }
+
+  secondHidden = (event) => {
+    event.preventDefault()
+    this.setState({
+      hidden: !this.state.hidden
+    });
+    console.log(this.state.hidden)
   }
 
   handleInputChange = event => {
@@ -51,13 +60,13 @@ class Books extends Component {
               <h1>Garage-Trade</h1>
             </Jumbotron>
             <form>
-              <SplashButton
+              <LoginButton
               onClick={this.toggleHidden.bind(this)}
               >
                 Go to Garage
-              </SplashButton>
+              </LoginButton>
               {this.state.isHidden ? null :
-              <div>
+              <div> Log in
 
               <Input
               value={this.state.username}
@@ -79,7 +88,35 @@ class Books extends Component {
               </FormBtn>
               </div> 
               }
-              
+
+              <SignButton
+              onClick={this.secondHidden.bind(this)}
+              >
+                Build your Garage
+              </SignButton>
+              {this.state.hidden ? null :
+              <div> Sign up
+
+              <Input
+              value={this.state.username}
+              onChange={this.handleInputChange}
+              name="username"
+              placeholder="username (required)"
+              />
+              <Input
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              name="password"
+              placeholder="password (required)"
+              />
+              <FormBtn
+                disabled={!(this.state.password && this.state.username)}
+                onClick={this.handleFormSubmit}
+              >
+                Sign up
+              </FormBtn>
+              </div> 
+              }              
             </form>
       </Container>
     );
