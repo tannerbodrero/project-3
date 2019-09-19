@@ -2,7 +2,8 @@ const router = require("express").Router();
 const itemRoutes = require("./items");
 const userRoutes = require("./user");
 
-// Book routes
+// specific routes from
+// localhost:PORT/api
 router.use("/items", itemRoutes);
 router.use("./user", userRoutes);
 
