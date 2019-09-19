@@ -3,12 +3,12 @@ const userController = require("../../controllers/userController");
 
 
 router.route("/")
-  .get(userController.findAll)
+  // .get(userController.findAll)
   .post(userController.create);
 
 router
   .route("/:name")
-  .get(userController.findById)
+  .get(userController.findByName)
   .put(userController.update)
   .delete(userController.remove);
 
