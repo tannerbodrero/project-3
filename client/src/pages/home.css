@@ -1,0 +1,18 @@
+.item-display-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align:center;
+    margin: 3% auto;
+    width: 90%;
+    height:80%;
+}
+
+.heading {
+    font-size:2rem;
+    color:darkblue;
+    font-family:cursive;
+    text-align:center;
+    margin-top:3%;
+}
