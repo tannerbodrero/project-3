@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
+import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 
-class Garage extends Component {
+class View extends Component {
     state = {
-      
+     
     };
   
   
-   
-
     handleInputChange = event => {
       const { name, value } = event.target;
       this.setState({
@@ -35,13 +32,14 @@ class Garage extends Component {
   
     render() {
       return (
-        <Row fluid>
-            <h1>Welcome to your personal Garage!</h1>
-        </Row>
-
-        
+        <Container fluid>
+              <Jumbotron>
+                <h1>Item #1</h1>
+              </Jumbotron>
+              
+        </Container>
       );
     }
   }
   
-export default Garage;
+export default View;
