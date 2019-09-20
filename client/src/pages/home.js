@@ -32,27 +32,6 @@ class Home extends React.Component {
 
         <div className="item-display-container">
 
-        {/* 3 hardcoded items to reflect what will be shown from database info after fixing proxy error. */}
-          <Item
-            img={temporary[0].img}
-            name={temporary[0].name}
-            details={temporary[0].details}
-            postedBy={temporary[0].postedBy}
-          />
-          <Item
-            img={temporary[1].img}
-            name={temporary[1].name}
-            details={temporary[1].details}
-            postedBy={temporary[1].postedBy}
-          />
-          <Item
-            img={temporary[2].img}
-            name={temporary[2].name}
-            details={temporary[2].details}
-            postedBy={temporary[2].postedBy}
-          />
-
-          {/* This is the real code to display database items */}
           {this.state.items.map(item => (
             <Item
               id={item.id}
