@@ -44,57 +44,59 @@ const itemSeed = [
 
 const userSeed = [
   {
-  name: "Nelson",
-  email: "nelson@nelson.com",
-  items: []
-},
-{
-  name: "Derek",
-  email: "derek@derek.com",
-  items: []
-},
-{
-  name: "Tucker",
-  email: "tucker@tucker.com",
-  items: []
-},
-{
-  name: "Pedro",
-  email: "pedro@pedro.com",
-  items: []
-},
-{
-  name: "Tanner",
-  email: "tanner@tanner.com",
-  items: []
-}
+    name: "Nelson",
+    email: "nelson@nelson.com",
+    items: []
+  },
+  {
+    name: "Derek",
+    email: "derek@derek.com",
+    items: []
+  },
+  {
+    name: "Tucker",
+    email: "tucker@tucker.com",
+    items: []
+  },
+  {
+    name: "Pedro",
+    email: "pedro@pedro.com",
+    items: []
+  },
+  {
+    name: "Tanner",
+    email: "tanner@tanner.com",
+    items: []
+  }
 ];
+
+function generateItems() {
+  itemSeed.forEach(item => {
+    db.Item.create(item)
+      .then(item => {
+        return db.User.findOneAndUpdate({ name: item.postedBy }, {
+          $push: {
+            items: item._id
+          }
+        }, { new: true });
+      })
+      .then(() => {
+        console.log("information added");
+      })
+      .catch(err => {
+        console.log(err)
+      });
+  });
+}
 
 db.User
   .remove({})
   .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
+  .then(generateItems)
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
-
-itemSeed.forEach(item => {
-  db.Item.create(item)
-    .then(item => {
-      return db.User.findOneAndUpdate({ name: item.postedBy }, {
-        $push: {
-          items: item._id
-        }
-      }, { new: true });
-    })
-    .then(() => {
-      console.log("information added");
-    })
-    .catch(err => {
-      console.log(err)
-    });
-});
