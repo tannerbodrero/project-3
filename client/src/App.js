@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
 import Nav from "./components/Nav";
+import View from './pages/View';
 // import "bootstrap/dist/css/bootstrap.min.css"
 // import various pages here
 
@@ -17,6 +18,7 @@ function App() {
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/splash" component={Splash} />
                     <Route exact path="/garage" component={Garage} />
+                    <Route exact path="/view" component={View} />
                 </Switch>
             </div>
         </Router>
