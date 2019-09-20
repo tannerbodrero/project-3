@@ -1,9 +1,9 @@
-import React from "react"
+import React, { Component } from "react";
 
 
 class Home extends Component {
   state = {
-      offers: [],
+      items: [],
       img: "",
       name: "",
       details: "",
@@ -11,7 +11,21 @@ class Home extends Component {
       lookingFor: "",
       email: ""
   };
-  
+
+  componentDidMount() {
+    this.loadItems();
+  }
+
+  loadItems = () => {
+    API.getItems()
+      .then(res =>
+        this.setState({ offers: res.data, img: "", name: "", details: "", postedBy: "", lookingFor: "", email: ""})
+        )
+        .catch(err => console.log(err));
+  };
+
+
+
     return (
         <section>
             <div>
