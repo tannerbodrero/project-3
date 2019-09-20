@@ -1,5 +1,5 @@
 import React from "react";
-import "./home.css";
+import "./Home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
