@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
+import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import temporary from "../components/temporary-items.json";
 
 class Home extends React.Component {
@@ -30,8 +31,9 @@ class Home extends React.Component {
           Here are the most recent listings of tradeable items!
         </h3>
 
+        
+        <ItemJumbotron>
         <div className="item-display-container">
-
           {this.state.items.map(item => (
             <Item
               id={item.id}
@@ -42,9 +44,9 @@ class Home extends React.Component {
               postedBy={item.postedBy}
               handleClicked={this.handleClicked}
             />
-          ))}
-          ;
+          ))};
         </div>
+        </ItemJumbotron>
       </div>
     );
   }
