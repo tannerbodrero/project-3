@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
-
+import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 class View extends Component {
     state = {
@@ -16,7 +16,7 @@ class View extends Component {
       });
     };
   
-    handleFormSubmit = event => {
+    handleRequestItem = event => {
       event.preventDefault();
       console.log("I am submit button!");
       // if (this.state.title && this.state.author) {
@@ -32,12 +32,17 @@ class View extends Component {
   
     render() {
       return (
-        <Container fluid>
-              <Jumbotron>
-                <h1>Item #1</h1>
-              </Jumbotron>
+        <div>
+              <ItemJumbotron>
+                <h1>Item</h1>
+              </ItemJumbotron>
+            
+              <FormBtn onClick={this.handleRequestItem}>
+                  Request Exchange
+              </FormBtn>
+            
               
-        </Container>
+        </div>
       );
     }
   }

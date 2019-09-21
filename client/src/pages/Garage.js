@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
+import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn, SplashBtn } from "../components/Form";
 
@@ -35,9 +35,12 @@ class Garage extends Component {
   
     render() {
       return (
-        <Row fluid>
-            <h1>Welcome to your personal Garage!</h1>
-        </Row>
+        <div>
+          <ItemJumbotron>
+          <h1>Welcome to your personal Garage!</h1>
+          </ItemJumbotron>
+        </div>
+        
 
         
       );
