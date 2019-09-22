@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
-import { Col, Row, Container } from "../components/Grid";
+import {Jumbotron} from "../components/Jumbotron";
+import {Container} from "../components/Grid";
 
 
 class View extends Component {

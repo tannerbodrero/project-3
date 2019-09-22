@@ -2,8 +2,7 @@ import React from "react";
 import "./home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
-import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
-import temporary from "../components/temporary-items.json";
+import { ItemJumbotron} from "../components/Jumbotron";
 
 class Home extends React.Component {
   state = {
