@@ -1,3 +1,7 @@
+body {
+    background-image: url("https://images.pexels.com/photos/935871/pexels-photo-935871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
 .item-display-container {
     display:flex;
     flex-wrap:wrap;
@@ -11,7 +15,8 @@
 
 .heading {
     font-size:2rem;
-    color:darkblue;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    color:yellow;
     font-family:cursive;
     text-align:center;
     margin-top:3%;

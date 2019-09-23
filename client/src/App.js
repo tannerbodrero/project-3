@@ -1,9 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
 import Nav from "./components/Nav";
+
 // import "bootstrap/dist/css/bootstrap.min.css"
 // import various pages here
 
