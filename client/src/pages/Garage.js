@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Row } from "../components/Grid";
-import API from "../utils/API";
-
+import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
+import { Col, Row, Container } from "../components/Grid";
+import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 
 class Garage extends Component {
