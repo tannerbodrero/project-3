@@ -2,10 +2,11 @@ import React from "react";
 import "./item.css";
 
 function Item(props) {
+  // console.log(props);
   return (
     <div
       className="item-display-wrap"
-      id={props.id}
+      id={props._id}
       onClick={() => props.handleClicked(props.id)}
     >
       <div className="image-wrap">

@@ -1,10 +1,12 @@
 import React from "react";
 import "./Home.css";
+import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
 import temporary from "../components/temporary-items.json";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import ModalExample from "../components/Modal/index"
 
 function searchingFor(term) {
     return function(x){
@@ -18,6 +20,9 @@ class Home extends React.Component {
     this.state = {
     items: [],
     term: "",
+    idClicked: "",
+    itemClicked: "",
+    modal: false
   }
   this.searchHandler = this.searchHandler.bind(this);
 };
@@ -38,8 +43,25 @@ searchHandler(event){
   };
 
   handleClicked = id => {
-    console.log("clicked item id: " + id);
+    // console.log("You click id " + id);
+    this.setState({idClicked: id});
+    for (let i = 0; i < this.state.items.length; i++){
+      if(this.state.items[i]._id === id){
+        this.setState({itemClicked: this.state.items[i]});
+        console.log(this.state.itemClicked);
+      }
+    }
+    this.setState({
+      modal: !this.state.modal
+    });
+    // console.log(this.state.modal)
   };
+
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
   render() {
     const {term, items} = this.state;
@@ -61,14 +83,16 @@ searchHandler(event){
         <h3 className="heading">
           Here are the most recent listings of tradeable items!
         </h3>
-
+        <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
+        
+        </ModalExample>
         
         <ItemJumbotron>
         <div className="item-display-container">
           {items.filter(searchingFor(term)).map(item => (
             <Item
-              id={item.id}
-              key={item.id}
+              id={item._id}
+              key={item._id}
               img={item.img}
               name={item.name}
               details={item.details}
