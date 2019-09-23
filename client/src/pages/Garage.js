@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn, SplashBtn } from "../components/Form";
+import API from "../utils/API"
 
 
 class Garage extends Component {

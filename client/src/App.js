@@ -4,7 +4,7 @@ import Home from "./pages/home2";
 import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
 import Nav from "./components/Nav";
-import View from "./pages/View";
+
 
 import { Security, SecureRoute, ImplicitCallback } from "@okta/okta-react";
 import Login from "./components/auth/Login";
