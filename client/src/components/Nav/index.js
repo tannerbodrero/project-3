@@ -7,11 +7,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink } from 'reactstrap';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -40,9 +36,6 @@ export default class Example extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/garage"> My Garage</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/view"> View item</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/">Log In</NavLink>
