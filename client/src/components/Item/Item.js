@@ -2,7 +2,7 @@ import React from "react";
 import "./item.css";
 
 function Item(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div
       className="item-display-wrap"

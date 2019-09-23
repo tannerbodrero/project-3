@@ -4,6 +4,7 @@ import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import temporary from "../components/temporary-items.json";
+import ModalExample from "../components/Modal/index"
 
 class Home extends React.Component {
   state = {
@@ -23,11 +24,12 @@ class Home extends React.Component {
   };
 
   handleClicked = id => {
-    console.log("You click id " + id);
+    // console.log("You click id " + id);
     this.setState({idClicked: id});
     for (let i = 0; i < this.state.items.length; i++){
       if(this.state.items[i]._id === id){
         this.setState({itemClicked: this.state.items[i]});
+        console.log(this.state.itemClicked);
       }
     }
   };
@@ -38,7 +40,9 @@ class Home extends React.Component {
         <h3 className="heading">
           Here are the most recent listings of tradeable items!
         </h3>
-
+        <ModalExample>
+        
+        </ModalExample>
         
         <ItemJumbotron>
         <div className="item-display-container">
