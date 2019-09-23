@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import {Jumbotron} from "../components/Jumbotron";
-import { Container } from "../components/Grid";
+import "./Splash.css";
+import Jumbotron from "../components/ItemJumbotron";
+import API from "../utils/API";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 class Splash extends Component {
     state = {
       isHidden: true,
       hidden: true,
-      email:"",
       username: "",
       password: ""
     };
@@ -38,7 +40,6 @@ class Splash extends Component {
   
     handleFormSubmit = event => {
       event.preventDefault();
-      console.log("I am submit button!");
       // if (this.state.title && this.state.author) {
       //   API.saveBook({
       //     title: this.state.title,
@@ -74,7 +75,6 @@ class Splash extends Component {
                 <Input
                 value={this.state.password}
                 onChange={this.handleInputChange}
-                type="password"
                 name="password"
                 placeholder="password (required)"
                 />
@@ -94,13 +94,7 @@ class Splash extends Component {
                 </SplashBtn>
                 {this.state.hidden ? null :
                 <div> Sign up
-
-                <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="email (required)"
-                />
+  
                 <Input
                 value={this.state.username}
                 onChange={this.handleInputChange}
@@ -110,7 +104,6 @@ class Splash extends Component {
                 <Input
                 value={this.state.password}
                 onChange={this.handleInputChange}
-                type="password"
                 name="password"
                 placeholder="password (required)"
                 />
