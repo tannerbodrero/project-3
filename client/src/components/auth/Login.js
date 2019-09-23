@@ -67,7 +67,7 @@ class Login extends Component {
               // className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              Tab1
+              Login
             </NavLink>
           </NavItem>
           <NavItem>
@@ -75,7 +75,7 @@ class Login extends Component {
               // className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              Moar Tabs
+              Sign Up
             </NavLink>
           </NavItem>
         </Nav>
@@ -83,25 +83,20 @@ class Login extends Component {
           <TabPane tabId="1">
             <Row>
               <Col sm="12">
-                <h4>Tab 1 Contents</h4>
+                <OktaSignIn 
+                
+                // code here for log in
+                
+                />
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
+              <Col sm="12">
+
+                <Registration />
+
               </Col>
             </Row>
           </TabPane>
