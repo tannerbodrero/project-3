@@ -7,6 +7,7 @@ import { withAuth } from "@okta/okta-react";
 import "./login.css";
 import OktaSignIn from "./SignInWidget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
+import Registration from "./registrationForm";
 
 class Login extends Component {
   constructor(props) {
@@ -23,12 +24,12 @@ class Login extends Component {
     }
   }
 
-  onSuccess = (res) => {
+  onSuccess = res => {
     console.log("successfull");
     return this.props.auth.redirect({
       sessionToken: res.session.token
     });
-  }
+  };
 
   onError(err) {
     console.log("error logging in", err);
@@ -43,13 +44,19 @@ class Login extends Component {
     if (this.state.authenticated === null) return null;
     return this.state.authenticated ? (
       <Redirect to={{ pathname: "/" }} />
-    ) : (
+    ) : 
+    (
       <div className="login-body">
-        <OktaSignIn
-          baseUrl={this.props.baseUrl}
-          onSuccess={this.onSuccess}
-          onError={this.onError}
-        />
+        <div>
+          <OktaSignIn
+            baseUrl={this.props.baseUrl}
+            onSuccess={this.onSuccess}
+            onError={this.onError}
+          />
+        </div>
+        <div>
+          <Registration />
+        </div>
       </div>
     );
   }

@@ -8,7 +8,8 @@ import View from "./pages/View";
 
 import { Security, SecureRoute, ImplicitCallback } from "@okta/okta-react";
 import Login from "./components/auth/Login";
-import Protected from "./components/auth/Protected";
+
+
 
 function onAuthRequired({ history }) {
   history.push("/login");
@@ -28,8 +29,9 @@ function App() {
         <Route exact path="/home" component={Home} />
         <Route exact path="/splash" component={Splash} />
         <Route exact path="/view" component={View} />
+        {/* <Route exact path="/signup" component={Signup} /> */}
+     
         <SecureRoute exact path="/garage" component={Garage} />
-        <SecureRoute exact path="/protected" component={Protected} />
 
         <Route
           path="/login"
