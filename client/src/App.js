@@ -5,9 +5,6 @@ import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
 import Nav from "./components/Nav";
 
-// import "bootstrap/dist/css/bootstrap.min.css"
-// import various pages here
-
 function App() {
     return (
         <Router>

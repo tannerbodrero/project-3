@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
+import ItemJumbotron from "../components/ItemJumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn, SplashBtn } from "../components/Form";
 
