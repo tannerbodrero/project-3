@@ -25,3 +25,8 @@ mongoose.connect(MONGOD_URI, { useNewUrlParser: true, useUnifiedTopology: true }
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
+// npm install --save @okta/jwt-verifier
+
+// const OktaJwtVerifier = require('@okta/jwt-verifier');
