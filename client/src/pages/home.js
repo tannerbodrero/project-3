@@ -7,10 +7,13 @@ import temporary from "../components/temporary-items.json";
 import ModalExample from "../components/Modal/index"
 
 class Home extends React.Component {
+  
   state = {
     items: [],
     idClicked: "",
-    itemClicked: ""
+    itemClicked: "",
+    modal: false
+    
   };
 
   componentDidMount() {
@@ -32,7 +35,17 @@ class Home extends React.Component {
         console.log(this.state.itemClicked);
       }
     }
+    this.setState({
+      modal: !this.state.modal
+    });
+    // console.log(this.state.modal)
   };
+
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
   render() {
     return (
@@ -40,7 +53,7 @@ class Home extends React.Component {
         <h3 className="heading">
           Here are the most recent listings of tradeable items!
         </h3>
-        <ModalExample>
+        <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
         
         </ModalExample>
         
