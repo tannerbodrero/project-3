@@ -3,7 +3,6 @@ import "./Home.css";
 import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
-import temporary from "../components/temporary-items.json";
 import ModalExample from "../components/Modal/index"
 
 class Home extends React.Component {
