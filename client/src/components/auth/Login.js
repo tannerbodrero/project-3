@@ -52,66 +52,67 @@ class Login extends Component {
     this.checkAuthentication();
   }
   
-      // <OktaSignIn 
-      // baseUrl={this.props.baseUrl}
-      // onSuccess={this.onSuccess}
-      // onError={this.onError}
-      
-      // />
-
+  
   render() {
     console.log(this.props);
     if (this.state.authenticated === null) return null;
     return this.state.authenticated ? (
       <Redirect to={{ pathname: "/" }} />
       ) : 
-      
-      (
-        <div>
-          <Nav tabs>
-            <NavItem>
-              <NavLink
-                // className={classnames({ active: this.state.activeTab === '1' })}
-                onClick={() => { this.toggle('1'); }}
-              >
-                Login
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                // className={classnames({ active: this.state.activeTab === '2' })}
-                onClick={() => { this.toggle('2'); }}
-              >
-                Sign Up
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <TabContent activeTab={this.state.activeTab}>
-            <TabPane tabId="1">
-              <Row>
-                <Col sm="12">
-                  <OktaSignIn 
-                  baseUrl={this.props.baseUrl}
-                  onSuccess={this.onSuccess}
-                  onError={this.onError}
-                  
-                  />
-                </Col>
-              </Row>
-            </TabPane>
-            <TabPane tabId="2">
-              <Row>
-                <Col sm="12">
-      
-                  <Registration />
-      
-                </Col>
-              </Row>
-            </TabPane>
-          </TabContent>
-        </div>
-      );
-  }
-}
 
-export default withAuth(Login);
+      <OktaSignIn 
+      baseUrl={this.props.baseUrl}
+      onSuccess={this.onSuccess}
+      onError={this.onError}
+      />
+      
+    }
+  }
+  
+  export default withAuth(Login);
+  
+    // (
+    //   <div>
+    //     <Nav tabs>
+    //       <NavItem>
+    //         <NavLink
+    //           // className={classnames({ active: this.state.activeTab === '1' })}
+    //           onClick={() => { this.toggle('1'); }}
+    //         >
+    //           Login
+    //         </NavLink>
+    //       </NavItem>
+    //       <NavItem>
+    //         <NavLink
+    //           // className={classnames({ active: this.state.activeTab === '2' })}
+    //           onClick={() => { this.toggle('2'); }}
+    //         >
+    //           Sign Up
+    //         </NavLink>
+    //       </NavItem>
+    //     </Nav>
+    //     <TabContent activeTab={this.state.activeTab}>
+    //       <TabPane tabId="1">
+    //         <Row>
+    //           <Col sm="12">
+    //             <OktaSignIn 
+    //             baseUrl={this.props.baseUrl}
+    //             onSuccess={this.onSuccess}
+    //             onError={this.onError}
+                
+    //             />
+    //           </Col>
+    //         </Row>
+    //       </TabPane>
+    //       <TabPane tabId="2">
+    //         <Row>
+    //           <Col sm="12">
+    
+    //             <Registration />
+    
+    //           </Col>
+    //         </Row>
+    //       </TabPane>
+    //     </TabContent>
+    //   </div>
+    // );
