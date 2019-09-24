@@ -7,7 +7,6 @@ import "./login.css";
 import OktaSignIn from "./SignInWidget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
 
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -64,9 +63,7 @@ class Login extends Component {
       onSuccess={this.onSuccess}
       onError={this.onError}
       />
-      
     }
   }
-  
   export default withAuth(Login);
   
