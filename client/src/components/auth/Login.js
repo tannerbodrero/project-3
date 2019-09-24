@@ -3,9 +3,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { withAuth } from "@okta/okta-react";
-import "./login.css";
 import OktaSignIn from "./SignInWidget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
+import "./login.css";
 
 
 class Login extends Component {
@@ -69,4 +69,3 @@ class Login extends Component {
   }
   
   export default withAuth(Login);
-  

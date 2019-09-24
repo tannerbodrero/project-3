@@ -8,7 +8,7 @@ class SignInWidget extends React.Component {
 
     signInWidgetConfig = {
 
-        logo: '//logo.clearbit.com/okta.com',
+        logo: 'https://logo.clearbit.com/okta.com',
         language: 'en',
         i18n: {
 
