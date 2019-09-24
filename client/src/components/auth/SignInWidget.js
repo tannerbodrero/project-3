@@ -6,7 +6,7 @@ import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 class SignInWidget extends React.Component {
 
-    componentDidMount() {
+    componentDidMount(props) {
         const el = ReactDOM.findDOMNode(this);
         this.widget = new OktaSignIn({
             baseUrl: this.props.baseUrl,

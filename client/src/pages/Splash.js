@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Splash.css";
 import Jumbotron from "../components/ItemJumbotron";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
+// import API from "../utils/API";
+// import { Link } from "react-router-dom";
+import { Container } from "../components/Grid";
 import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 class Splash extends Component {
@@ -38,8 +38,8 @@ class Splash extends Component {
       });
     };
   
-    handleFormSubmit = event => {
-      event.preventDefault();
+    // handleFormSubmit = event => {
+      // event.preventDefault();
       // if (this.state.title && this.state.author) {
       //   API.saveBook({
       //     title: this.state.title,
@@ -49,7 +49,7 @@ class Splash extends Component {
       //     .then(res => this.loadBooks())
       //     .catch(err => console.log(err));
       // }
-    };
+    // };
   
     render() {
       return (

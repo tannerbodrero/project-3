@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ItemJumbotron from "../components/ItemJumbotron";
-import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, SplashBtn } from "../components/Form";
+// import ItemJumbotron from "../components/ItemJumbotron";
+import { Row } from "../components/Grid";
+// import { Input, FormBtn, SplashBtn } from "../components/Form";
 import API from "../utils/API"
 
 
