@@ -3,21 +3,39 @@ import React, { Component } from "react";
 import { Row } from "../components/Grid";
 // import { Input, FormBtn, SplashBtn } from "../components/Form";
 import API from "../utils/API"
+import { withAuth } from "@okta/okta-react";
 
 
-class Garage extends Component {
-    state = {
+
+export default withAuth(class Garage extends Component {
+  constructor(props) {
+    super(props);
+    this.checkAuthentication = this.checkAuthentication.bind(this);
+    this.checkAuthentication();
+    this.state = {
+      authenticated: null,
       user: "friend",
       items: []
     };
+  }
+
+      
+  async checkAuthentication() {
+    const authenticated = await this.props.auth.isAuthenticated();
+    if (authenticated !== this.state.authenticated) {
+      this.setState({ authenticated });
+    }
+  }
+
+  componentDidMount() {
+    var idToken = JSON.parse(localStorage.getItem('okta-token-storage'));
+    this.setState({ user: idToken.idToken.claims.name });
+    this.loadGarage(this.state.user);
+  }
   
-componentDidMount() {
-var idToken = JSON.parse(localStorage.getItem('okta-token-storage'));
-this.setState({ user: idToken.idToken.claims.name });
-
-this.loadGarage(this.state.user);
-}
-
+  componentDidUpdate() {
+    this.checkAuthentication();
+  }
 
 loadGarage = name => {
 API.getItemsByName(name)
@@ -33,29 +51,21 @@ this.setState({
 });
 };
   
-    // handleFormSubmit = event => {
-    //   event.preventDefault();
-    //   console.log("I am submit button!");
-    //   if (this.state.title && this.state.author) {
-    //     API.saveBook({
-    //       title: this.state.title,
-    //       author: this.state.author,
-    //       synopsis: this.state.synopsis
-    //     })
-    //       .then(res => this.loadBooks())
-    //       .catch(err => console.log(err));
-    //   }
-    // };
+
   
     render() {
+const button = this.state.authenticated ?
+<button onClick={() => {this.props.auth.logout()}}>Logout</button> :
+<button onClick={() => {this.props.auth.login()}}>Login</button>;
       return (
         <Row fluid>
             <h1> Welcome {this.state.user}! </h1>
+            {button}
+            
         </Row>
 
         
       );
     }
-  }
+  });
   
-export default Garage;
