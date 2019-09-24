@@ -1,9 +1,11 @@
 import React from "react";
-import "./home.css";
+import "./Home.css";
+import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
-import {  Form, FormGroup, Label, Input } from 'reactstrap';
+import temporary from "../components/temporary-items.json";
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
 
 function searchingFor(term) {
@@ -30,17 +32,17 @@ searchHandler(event){
     console.log(event.target.value);
 }
 
-  componentDidMount() {
+componentDidMount() {
     this.loadItems();
-  }
+}
 
-  loadItems = () => {
+loadItems = () => {
     API.getItems()
       .then(res => this.setState({ items: res.data }))
       .catch(err => console.log(err));
-  };
+};
 
-  handleClicked = id => {
+handleClicked = id => {
     // console.log("You click id " + id);
     this.setState({idClicked: id});
     for (let i = 0; i < this.state.items.length; i++){
@@ -53,7 +55,7 @@ searchHandler(event){
       modal: !this.state.modal
     });
     // console.log(this.state.modal)
-  };
+};
 
   toggle = () => {
     this.setState({
