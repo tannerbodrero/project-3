@@ -30,3 +30,7 @@ app.listen(PORT, function() {
 // npm install --save @okta/jwt-verifier
 
 // const OktaJwtVerifier = require('@okta/jwt-verifier');
+
+// const oktaJwtVerifier = new OktaJwtVerifier({
+// 
+//})
