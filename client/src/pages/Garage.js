@@ -12,8 +12,8 @@ export default withAuth(
       this.checkAuthentication();
       this.state = {
         authenticated: null,
-        user: "friend",
-        email: "email",
+        user: null,
+        email: null,
         items: []
       };
     }
