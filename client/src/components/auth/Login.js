@@ -6,7 +6,6 @@ import { withAuth } from "@okta/okta-react";
 import "./login.css";
 import OktaSignIn from "./SignInWidget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
-import Registration from "./registrationForm";
 
 class Login extends Component {
   constructor(props) {
