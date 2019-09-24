@@ -1,20 +1,34 @@
 import React from "react";
-import "./Home.css";
-import {Jumbotron, ItemJumbotron} from "../components/Jumbotron";
+import "./home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
-import temporary from "../components/temporary-items.json";
+import ItemJumbotron from "../components/ItemJumbotron";
+import {  Form, FormGroup, Label, Input } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
 
+function searchingFor(term) {
+    return function(x){
+      return x.name.toLowerCase().includes(term.toLowerCase()) || false;
+    }
+  }
+
 class Home extends React.Component {
-  
-  state = {
+  constructor(props){
+    super(props);
+    this.state = {
     items: [],
+    term: "",
     idClicked: "",
     itemClicked: "",
     modal: false
-    
-  };
+  }
+  this.searchHandler = this.searchHandler.bind(this);
+};
+
+searchHandler(event){
+    this.setState({ term : event.target.value })
+    console.log(event.target.value);
+}
 
   componentDidMount() {
     this.loadItems();
@@ -48,8 +62,22 @@ class Home extends React.Component {
   }
 
   render() {
+    const {term, items} = this.state;
     return (
       <div>
+        <Form>
+        <FormGroup>
+          <Label for="exampleSearch">Looking for something in specific?</Label>
+          <Input
+            type="text"
+            name="search"
+            id="exampleSearch"
+            placeholder="Search for an Item to Trade for"
+            onChange={this.searchHandler}
+            value={term}
+          />
+        </FormGroup>
+      </Form>
         <h3 className="heading">
           Here are the most recent listings of tradeable items!
         </h3>
@@ -59,7 +87,7 @@ class Home extends React.Component {
         
         <ItemJumbotron>
         <div className="item-display-container">
-          {this.state.items.map(item => (
+          {items.filter(searchingFor(term)).map(item => (
             <Item
               id={item._id}
               key={item._id}
