@@ -6,8 +6,6 @@ import { withAuth } from "@okta/okta-react";
 import "./login.css";
 import OktaSignIn from "./SignInWidget";
 import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
-import Registration from "./registrationForm";
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 
 class Login extends Component {
   constructor(props) {
@@ -65,54 +63,7 @@ class Login extends Component {
       onSuccess={this.onSuccess}
       onError={this.onError}
       />
-      
     }
   }
-  
   export default withAuth(Login);
   
-    // (
-    //   <div>
-    //     <Nav tabs>
-    //       <NavItem>
-    //         <NavLink
-    //           // className={classnames({ active: this.state.activeTab === '1' })}
-    //           onClick={() => { this.toggle('1'); }}
-    //         >
-    //           Login
-    //         </NavLink>
-    //       </NavItem>
-    //       <NavItem>
-    //         <NavLink
-    //           // className={classnames({ active: this.state.activeTab === '2' })}
-    //           onClick={() => { this.toggle('2'); }}
-    //         >
-    //           Sign Up
-    //         </NavLink>
-    //       </NavItem>
-    //     </Nav>
-    //     <TabContent activeTab={this.state.activeTab}>
-    //       <TabPane tabId="1">
-    //         <Row>
-    //           <Col sm="12">
-    //             <OktaSignIn 
-    //             baseUrl={this.props.baseUrl}
-    //             onSuccess={this.onSuccess}
-    //             onError={this.onError}
-                
-    //             />
-    //           </Col>
-    //         </Row>
-    //       </TabPane>
-    //       <TabPane tabId="2">
-    //         <Row>
-    //           <Col sm="12">
-    
-    //             <Registration />
-    
-    //           </Col>
-    //         </Row>
-    //       </TabPane>
-    //     </TabContent>
-    //   </div>
-    // );

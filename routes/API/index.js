@@ -8,3 +8,17 @@ router.use("/items", itemRoutes);
 router.use("/user", userRoutes);
 
 module.exports = router;
+
+
+
+ function middlewhere(req,res,next) {
+
+     if (authenticated) {
+         var token = req.headers.authenticated
+         next();
+        }
+        
+        else {
+            res.redirect("/");
+        }
+    }

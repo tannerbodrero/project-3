@@ -67,10 +67,14 @@ handleClicked = id => {
     const {term, items} = this.state;
     return (
       <div>
-        <Form>
+        <h3 className="heading">
+          Here are the most recent listings of tradeable items!
+        </h3>
+        <Form className="searchbar-wrap">
         <FormGroup>
           <Label for="exampleSearch">Looking for something in specific?</Label>
           <Input
+            className="search-bar"
             type="text"
             name="search"
             id="exampleSearch"
@@ -80,14 +84,11 @@ handleClicked = id => {
           />
         </FormGroup>
       </Form>
-        <h3 className="heading">
-          Here are the most recent listings of tradeable items!
-        </h3>
         <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
         
         </ModalExample>
         
-        <ItemJumbotron>
+        <ItemJumbotron className="jumbo-background">
         <div className="item-display-container">
           {items.filter(searchingFor(term)).map(item => (
             <Item
