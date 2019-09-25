@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Row, Container } from "../components/Grid";
 import API from "../utils/API";
 import { withAuth } from "@okta/okta-react";
 import "./Garage.css";
-
-
+import PostForm from "../components/Garage/PostForm"
+import UserItems from "../components/Garage/UserItems"
 
 export default withAuth(
   class Garage extends Component {
@@ -16,7 +15,8 @@ export default withAuth(
         authenticated: null,
         user: null,
         email: null,
-        items: []
+        items: [],
+        form: false
       };
     }
 
@@ -50,8 +50,11 @@ export default withAuth(
     };
 
     render() {
+
+      // Conditional Render for Login/Logout Button
       const button = this.state.authenticated ? (
         <button
+          className="garage-button"
           onClick={() => {
             this.props.auth.logout();
           }}
@@ -60,6 +63,7 @@ export default withAuth(
         </button>
       ) : (
         <button
+          className="garage-button"
           onClick={() => {
             this.props.auth.login();
           }}
@@ -68,29 +72,46 @@ export default withAuth(
         </button>
       );
 
+      // Conditional Render - Display based off of this.state.form
+      const display = this.state.form ? (
+        <div>
+        <h1 className="heading" >Create Your Item Here!</h1>
+        <PostForm user={this.state.user} email={this.state.email}/>
+        </div>
+      ) : (
+        <div>
+        <h1 className="heading" > {this.state.user}'s Posted Items</h1>
+        <UserItems />
+        </div>
+      );
+
+
       return (
-        <div className="garage-wrap">
+        <div>
+          <div className="top-div">
+            <div className="left-side">
+              <h1 className="garage-heading">Welcome {this.state.user}!</h1>
+            </div>
 
-          <Row fluid className="top-row">
-            <h1> Welcome to your personal garage {this.state.user}! </h1>
-            <br />
-            <h2>{" "}{this.state.user}'s registered email is {this.state.email}{" "}</h2>
-            <br />
-            {button}
-            <br />
-          </Row>
+            <div className="right-side">
+              <button
+                className="garage-button"
+                onClick={() => this.setState({ form: true })}
+              >
+                {" "}
+                Post Item
+              </button>
+              <button
+                className="garage-button"
+                onClick={() => this.setState({ form: false })}
+              >
+                Your Items
+              </button>
+              {button}
+            </div>
+          </div>
 
-          <Row className="bottom-row">
-
-          <Container fluid className="left-side">
-            <h3>Left side for Menu of Post/Delete Etc.</h3>
-          </Container>
-
-          <Container fluid className="right-side">
-            <h3>Right side for Displaying Items, or Forms or something.</h3>
-          </Container>
-
-          </Row>
+          <div className="bottom-div">{display}</div>
         </div>
       );
     }
