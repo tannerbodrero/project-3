@@ -8,9 +8,9 @@ class PostForm extends React.Component {
   state = {
     itemName: "",
     owner: "",
-    img: 0,
-    details: "",
     lookingFor: "",
+    img: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
+    details: ""
   };
 
   // Live updating to state
@@ -42,8 +42,8 @@ class PostForm extends React.Component {
   };
 
   render(props) {
-    // Variable to inject into live preview to display placeholder if no URL was entered by user yet.
-    const previewImage = this.state.img || "/public/box3.png" ;
+
+    const previewImage = this.state.img || "/public/box3.png";
 
     return (
       <div className="form-component">
@@ -62,7 +62,7 @@ class PostForm extends React.Component {
             <input
               className="image-input-bar"
               value={this.state.lastName}
-              name="image"
+              name="img"
               onChange={this.handleInputChange}
               type="text"
               placeholder="Image URL"

@@ -112,6 +112,7 @@
     max-height: 350px;
     margin-top: 5%;
 }
+
 .splash-button {
 width: 100%;
 max-width: 200px;
@@ -126,4 +127,6 @@ transition: 0.2s;
 border:1px solid black;
 margin-top: 10%;
 
-}};
+}
+
+}

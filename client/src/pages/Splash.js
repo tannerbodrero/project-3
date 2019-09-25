@@ -47,9 +47,7 @@ class Splash extends Component {
 
             <Link className="splash-link" to="/home"><button className="splash-button">JUST BROWSING</button></Link>
 
-            <Link className="splash-link" to="/garage"><button className="splash-button">SIGN IN</button></Link>
-        
-            {/* <Link className="splash-link" to="/garage"><button className="splash-button">SIGN UP</button></Link> */}
+            <Link className="splash-link" to="/garage"><button className="splash-button">SIGN UP or SIGN IN</button></Link>
           
         </div>
 
