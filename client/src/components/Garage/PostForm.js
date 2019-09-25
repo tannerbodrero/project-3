@@ -6,7 +6,7 @@ class PostForm extends React.Component {
   state = {
     itemName: "",
     owner: "",
-    img: 0,
+    img: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
     details: ""
   };
   handleInputChange = event => {
@@ -24,7 +24,7 @@ class PostForm extends React.Component {
 
   render(props) {
 
-    const previewImage = this.state.img || "/public/box3.png"
+    const previewImage = this.state.img || "/public/box3.png";
 
     return (
       <div className="form-component">
@@ -43,7 +43,7 @@ class PostForm extends React.Component {
             <input
               className="image-input-bar"
               value={this.state.lastName}
-              name="image"
+              name="img"
               onChange={this.handleInputChange}
               type="text"
               placeholder="Image URL"

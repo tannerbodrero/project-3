@@ -54,7 +54,7 @@ searchHandler(event){
     this.setState({
       modal: !this.state.modal
     });
-    // console.log(this.state.modal)
+    // console.log(this.state.modal);
   };
 
   toggle = () => {
