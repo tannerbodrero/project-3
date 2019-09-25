@@ -25,7 +25,9 @@
 
 .item-name {
     font-size:2rem;
-    font-family: cursive;
+    font-family: 'Lora', serif;
+    font-weight:bold;
+    /* font-style:italic; */
 }
 
 .item-display-wrap:hover .item-name {
@@ -36,9 +38,10 @@
 
 .item-owner {
 font-size: 1rem;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Lora', serif;
 }
 
 .item-details {
 font-size: 0.8rem;
+font-family: 'Lora', serif;
 }
