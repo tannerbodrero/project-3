@@ -18,11 +18,11 @@ class UserItems extends React.Component {
   };
   
     componentDidMount() {
-      this.loadUserItems();
+      this.loadUserItems(this.props.email);
     }
   
-    loadUserItems = name => {
-      API.getItemsByName(name)
+    loadUserItems = email => {
+      API.getItemsByEmail(email)
         .then(res => this.setState({ items: res.data }))
         .catch(err => console.log(err));
     };
