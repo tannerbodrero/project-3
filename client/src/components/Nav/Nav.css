@@ -9,8 +9,29 @@
     color: #b3a670;
     font-size:1.6rem;
     transition: 0.2s;
+    font-family: 'Lora', serif;
+    /* font-style:italic; */
 }
 
 .brand:hover {
     color:#fce9a0;
 }
+
+.logo {
+    height: 4%;
+    width:4%;
+    margin-right: 15px;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .logo {
+        display:none;
+    }
+
+    .nav-link {
+        color:#b3a670;
+    }
+}
+
