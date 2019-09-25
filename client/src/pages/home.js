@@ -6,6 +6,8 @@ import ItemJumbotron from "../components/ItemJumbotron";
 import {  Form, FormGroup, Label, Input } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
 
+
+
 function searchingFor(term) {
     return function(x){
       return x.name.toLowerCase().includes(term.toLowerCase()) || false;
@@ -65,6 +67,7 @@ searchHandler(event){
     const {term, items} = this.state;
     return (
       <div>
+
         <h3 className="heading">
           Here are the most recent listings of tradeable items!
         </h3>

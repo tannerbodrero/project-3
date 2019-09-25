@@ -28,15 +28,15 @@ export default class Example extends React.Component {
     return (
       <div className="nav-bar">
         <Navbar  light expand="md">
-        <NavLink href="/home"><h1 className="brand">GARAGE TRADER</h1></NavLink>
+        <NavLink href="/"><h1 className="brand"><img className="logo" src="/box3.png" alt="logo"/>GARAGE TRADER</h1></NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/home"> Browse Items </NavLink>
+                <NavLink className="nav-link" href="/home"> Browse Items </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/garage"> Your Garage</NavLink>
+                <NavLink className="nav-link" href="/garage"> Your Garage</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
