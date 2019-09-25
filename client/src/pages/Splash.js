@@ -4,7 +4,6 @@ import Jumbotron from "../components/ItemJumbotron";
 // import API from "../utils/API";
 // import { Link } from "react-router-dom";
 import { Container } from "../components/Grid";
-import { Input, FormBtn, SplashBtn } from "../components/Form";
 
 class Splash extends Component {
     state = {
