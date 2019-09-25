@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Nav.css"
 
 import {
   Collapse,
@@ -25,20 +26,17 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/home">Garage Trader</NavbarBrand>
+      <div className="nav-bar">
+        <Navbar  light expand="md">
+        <NavLink href="/"><h1 className="brand"><img className="logo" src="/box3.png" alt="logo"/>GARAGE TRADER</h1></NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/home"> View Offers</NavLink>
+                <NavLink className="nav-link" href="/home"> Browse Items </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/garage"> My Garage</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Log In</NavLink>
+                <NavLink className="nav-link" href="/garage"> Your Garage</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

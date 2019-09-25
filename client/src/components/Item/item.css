@@ -1,35 +1,47 @@
 .item-display-wrap {
     height: 300px;
     width: 300px;
-    box-shadow: -0.5em 0 .4em rgb(113, 113, 5);
+    box-shadow: -0.3em 0 .3em #b3a670;
     border-radius: 5%;
-    background-color:rgba(113,113,5,0.7);
+    /* background-color:#593f14; */
+    background: linear-gradient(to bottom, #3f2b0a 0%, #c1ab53 75%) ;
     max-height:300px;
     max-width:300px;
-    border: 1px solid olive;
+    border: 1px solid black;
+    margin-top: 15px;
+    transition:0.2s;
 }
 .image-wrap {
     height:200px;
-
+    
 }
 .item-image {
-max-height:175px;
-height:200px;
-width:200px;
-border-bottom:6px solid olive;
-border-radius:7%;
+    max-height:175px;
+    height:200px;
+    width:200px;
+    border-bottom:6px solid olive;
+    border-radius:7%;
 }
 
 .item-name {
-font-size:2rem;
-font-family: cursive;
+    font-size:2rem;
+    font-family: 'Lora', serif;
+    font-weight:bold;
+    /* font-style:italic; */
+}
+
+.item-display-wrap:hover .item-name {
+    color:yellow;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+
 }
 
 .item-owner {
 font-size: 1rem;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Lora', serif;
 }
 
 .item-details {
 font-size: 0.8rem;
+font-family: 'Lora', serif;
 }

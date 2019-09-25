@@ -10,7 +10,7 @@ function Item(props) {
       onClick={() => props.handleClicked(props.id)}
     >
       <div className="image-wrap">
-        <img className="item-image" src={props.img} alt="item-image" />
+        <img className="item-image" src={props.img} alt="item-display" />
       </div>
       
       <h3 className="item-name"> {props.name} </h3>

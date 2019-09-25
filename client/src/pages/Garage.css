@@ -1,0 +1,15 @@
+.garage-wrap {
+    text-align:center;
+    color: rgb(247, 201, 84);
+    text-shadow: 2px 2px black;
+}
+
+.top-row {
+
+}
+.left-side {
+    width:50%;
+}
+.right-side {
+    width:50%;
+}

@@ -1,12 +1,12 @@
 import React from "react";
-import "./Home.css";
-import Jumbotron from "../components/Jumbotron";
+import "./home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
-import temporary from "../components/temporary-items.json";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {  Form, FormGroup, Label, Input } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
+
+
 
 function searchingFor(term) {
     return function(x){
@@ -67,10 +67,15 @@ searchHandler(event){
     const {term, items} = this.state;
     return (
       <div>
-        <Form>
+
+        <h3 className="heading">
+          Here are the most recent listings of tradeable items!
+        </h3>
+        <Form className="searchbar-wrap">
         <FormGroup>
           <Label for="exampleSearch">Looking for something in specific?</Label>
           <Input
+            className="search-bar"
             type="text"
             name="search"
             id="exampleSearch"
@@ -80,14 +85,11 @@ searchHandler(event){
           />
         </FormGroup>
       </Form>
-        <h3 className="heading">
-          Here are the most recent listings of tradeable items!
-        </h3>
         <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
         
         </ModalExample>
         
-        <ItemJumbotron>
+        <ItemJumbotron className="jumbo-background">
         <div className="item-display-container">
           {items.filter(searchingFor(term)).map(item => (
             <Item
