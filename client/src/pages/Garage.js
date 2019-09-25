@@ -4,6 +4,8 @@ import API from "../utils/API";
 import { withAuth } from "@okta/okta-react";
 import "./Garage.css";
 
+
+
 export default withAuth(
   class Garage extends Component {
     constructor(props) {
@@ -68,6 +70,7 @@ export default withAuth(
 
       return (
         <div className="garage-wrap">
+
           <Row fluid className="top-row">
             <h1> Welcome to your personal garage {this.state.user}! </h1>
             <br />

@@ -22,3 +22,5 @@ module.exports = router;
             res.redirect("/");
         }
     }
+
+    app.get("/", middlewhere(), function())
