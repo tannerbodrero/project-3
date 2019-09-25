@@ -7,7 +7,14 @@ export default {
   },
 
   getItemsByName: function(name) {
-    return axios.get("/api/user/" + name);
+    return axios.get({
+      url: "/api/user/" + name,
+      headers: {
+        
+      }
+
+    }
+      );
   },
 
   getItem: function(id) {
