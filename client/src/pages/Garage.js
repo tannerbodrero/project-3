@@ -29,7 +29,7 @@ export default withAuth(
 
     componentDidMount() {
       this.getCredentials();
-      // this.loadGarage(this.state.email);
+
     }
 
     componentDidUpdate() {
