@@ -4,10 +4,17 @@ module.exports = {
   
   findByEmail: function(req, res) {
     db.User
-      .findById(req.params.email)
+      .findOne({ email: req.params.email}) 
+      .populate("items")
+        
+      //   function(err, User) {
+      //   if (err) {
+      //     res.status(422).json(err)} 
+      //     res.json(User);
+      // }
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },
+      },
   
   create: function(req, res) {
     db.User

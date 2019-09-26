@@ -13,20 +13,40 @@ class UserItems extends React.Component {
       term: "",
       idClicked: "",
       itemClicked: "",
-      modal: false
+      modal: false,
+      email: null,
+      user:null,
     }
   };
   
-    componentDidMount() {
-      this.loadUserItems(this.props.email);
+componentDidMount() {
+    this.getCredentials();}
+    
+    getCredentials() {
+      var idToken = JSON.parse(localStorage.getItem("okta-token-storage"));
+      console.log(idToken.idToken.claims.email);
+      this.loadUser(idToken.idToken.claims.email);
     }
   
-    loadUserItems = email => {
-      API.getItemsByEmail(email)
-        .then(res => this.setState({ items: res.data }))
+    loadUser = email => {
+      API.getUserByEmail(email).then( res => {
+        console.log((res.data));
+        this.setState({ user: res.data })
+      })
+        .then(this.updateItems)
         .catch(err => console.log(err));
+
+        // console.log(this.state.items);
+
+        
     };
   
+    updateItems = () => {
+      this.setState({items: this.state.user.items})
+
+    }
+
+
     handleClicked = id => {
       this.setState({idClicked: id});
       for (let i = 0; i < this.state.items.length; i++){
@@ -47,6 +67,8 @@ class UserItems extends React.Component {
     }
   
     render() {
+
+      // const items = this.state.user.items;
       return (
         <div>
           <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
@@ -54,6 +76,7 @@ class UserItems extends React.Component {
           </ModalExample>
           
           <ItemJumbotron className="jumbo-background user-item-jumbo">
+          <h1 className="preview-text"> Click An Item For More Info </h1> 
           <div className="item-display-container">
             {this.state.items.map(item => (
               <Item
