@@ -85,6 +85,8 @@ class PostForm extends React.Component {
     this.singleFileUploadHandler();
 
 
+    console.log("hello world")
+    
     // grab current states 
     let itemData = {
       img: this.state.img,

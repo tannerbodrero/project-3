@@ -29,7 +29,7 @@ export default withAuth(
 
     componentDidMount() {
       this.getCredentials();
-      // this.loadGarage(this.state.email);
+
     }
 
     componentDidUpdate() {
@@ -110,7 +110,6 @@ export default withAuth(
               {button}
             </div>
           </div>
-
           <div className="bottom-div">{display}</div>
         </div>
       );

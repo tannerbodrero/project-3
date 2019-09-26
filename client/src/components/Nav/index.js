@@ -43,5 +43,5 @@ export default class Example extends React.Component {
         </Navbar>
       </div>
     );
-  }
-}
+  };
+};

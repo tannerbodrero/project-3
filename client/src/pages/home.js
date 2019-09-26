@@ -75,7 +75,7 @@ handleClicked = id => {
         </h3>
         <Form className="searchbar-wrap">
         <FormGroup>
-          <Label for="exampleSearch">Looking for something in specific?</Label>
+          <Label className="text1" for="exampleSearch">Looking for something in specific?</Label>
           <Input
             className="search-bar"
             type="text"
@@ -92,6 +92,7 @@ handleClicked = id => {
         </ModalExample>
         
         <ItemJumbotron className="jumbo-background">
+          <h1 className="preview-text"> Click An Item For More Info </h1> 
         <div className="item-display-container">
           {items.filter(searchingFor(term)).map(item => (
             <Item

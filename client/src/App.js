@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
+import View from "./pages/View";
 import Nav from "./components/Nav";
 import { Security, SecureRoute, ImplicitCallback } from "@okta/okta-react";
 import Login from "./components/auth/Login";
@@ -26,6 +27,10 @@ function App() {
         <Route exact path="/" component={Splash} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/splash" component={Splash} />
+        <Route exact path="/view" component={View} />
+
+        {/* <Route exact path="/signup" component={Signup} /> */}
+     
         <SecureRoute exact path="/garage" component={Garage} />
 
         <Route
