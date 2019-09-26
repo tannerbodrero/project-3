@@ -73,7 +73,7 @@ searchHandler(event){
         </h3>
         <Form className="searchbar-wrap">
         <FormGroup>
-          <Label for="exampleSearch">Looking for something in specific?</Label>
+          <Label className="text1" for="exampleSearch">Looking for something in specific?</Label>
           <Input
             className="search-bar"
             type="text"

@@ -12,24 +12,30 @@ class View extends React.Component {
     
     state = {
         items: [],
-        email:"",
-        idToken:""
+        currentEmail:""
     }
 
-    componentDidMount(props) {
-        console.log(this.props.email);
-        this.loadView(this.props.email);
+    componentDidMount() {
+        this.getEmail();
+        this.loadView();
     }
 
-      loadView = (email) => {
-        console.log("This is the email: " + email)
+    getEmail(){
+        var idToken = JSON.parse(localStorage.getItem("okta-token-storage"));
+        console.log("This is the email: " + idToken.idToken.claims.email);
+        this.loadView(idToken.idToken.claims.email);
+    }
+
+      loadView = email => {
+        console.log("This is the load email: " + email)
+        // this.setState({CurrentEmail: email});
         API.getItems(email)
           .then(res => this.setState({ items: res.data }))
           .catch(err => console.log(err));
       };
 
     render() {
-        const {term, items} = this.state;
+        const items = this.state;
         return (
     <div>
         
@@ -47,7 +53,7 @@ class View extends React.Component {
         
         <ItemJumbotron className="jumbo-background">
         <div className="item-display-container">
-          {items.map(item => (
+        {/* {items.map(item => (
             <Item
               id={item._id}
               key={item._id}
@@ -55,9 +61,8 @@ class View extends React.Component {
               name={item.name}
               details={item.details}
               postedBy={item.postedBy}
-              handleClicked={this.handleClicked}
             />
-          ))};
+          ))}; */}
         </div>
         </ItemJumbotron>
     </div>

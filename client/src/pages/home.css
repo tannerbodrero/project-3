@@ -23,6 +23,14 @@ body {
     background-color: rgba(0,0,0,0.7);
 }
 
+.text1{
+    font-size:1.5rem;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    color:yellow;
+    font-family:cursive;
+    text-align:center;
+}
+
 .search-bar {
     background: #b3a670;
     border-radius: 3%;
