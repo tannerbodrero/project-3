@@ -8,12 +8,14 @@ class PostForm extends React.Component {
   state = {
     itemName: "",
     owner: "",
-    img: 0,
     details: "",
+    lookingFor: "",
+    img: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
     selectedFile: null,
     selectedFiles: null
   };
-  
+
+  // Live updating to state
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -80,7 +82,6 @@ class PostForm extends React.Component {
     API.saveItem(itemData)
       .then(res => console.log(res))
       .catch(err => console.log(err));
-
   };
 
   singleFileChangedHandler = ( event ) => {
@@ -92,7 +93,7 @@ class PostForm extends React.Component {
 
   render(props) {
 
-    const previewImage = this.state.img || "/public/box3.png"
+    const previewImage = this.state.img || "/public/box3.png";
 
     return (
       <div className="form-component">
@@ -115,6 +116,14 @@ class PostForm extends React.Component {
               onChange={this.singleFileChangedHandler}
               type="file"
               placeholder="Image URL"
+            />
+            <input
+              className="lookingFor-input-bar"
+              value={this.state.lookingFor}
+              name="lookingFor"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="Willing to exchange for..."
             />
             <input
               className="details-input-bar"

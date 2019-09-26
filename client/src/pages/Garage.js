@@ -29,12 +29,12 @@ export default withAuth(
 
     componentDidMount() {
       this.getCredentials();
-      this.loadGarage(this.state.user);
+      // this.loadGarage(this.state.email);
     }
 
     componentDidUpdate() {
       this.checkAuthentication();
-      this.loadGarage(this.state.user);
+      // this.loadGarage(this.state.user);
     }
 
     getCredentials() {
@@ -43,8 +43,8 @@ export default withAuth(
       this.setState({ email: idToken.idToken.claims.email });
     }
 
-    loadGarage = name => {
-      API.getItemsByName(name)
+    loadGarage = email => {
+      API.getItemsByName(email)
         .then(res => this.setState({ items: res.data }))
         .catch(err => console.log(err));
     };

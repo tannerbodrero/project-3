@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/items");
   },
 
-  getItemsByName: function(name) {
-    return axios.get("/api/user/" + name);
+  getItemsByEmail: function(email) {
+    return axios.get("/api/user/" + email);
   },
 
   getItem: function(id) {
@@ -22,3 +22,4 @@ export default {
     return axios.post("/api/items", itemData);
   }
 };
+

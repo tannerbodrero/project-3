@@ -1,6 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+<<<<<<< HEAD
 import Home from "./pages/Home";
+=======
+import Home from "./pages/home";
+>>>>>>> 74d2105d33a7e585e033cf6a5c24fd2b00d66cd0
 import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
 import Nav from "./components/Nav";
@@ -26,9 +30,6 @@ function App() {
         <Route exact path="/" component={Splash} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/splash" component={Splash} />
-
-        {/* <Route exact path="/signup" component={Signup} /> */}
-     
         <SecureRoute exact path="/garage" component={Garage} />
 
         <Route

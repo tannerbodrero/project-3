@@ -56,8 +56,13 @@ handleClicked = id => {
     this.setState({
       modal: !this.state.modal
     });
+<<<<<<< HEAD
     // console.log(this.state.modal)
 };
+=======
+    // console.log(this.state.modal);
+  };
+>>>>>>> 74d2105d33a7e585e033cf6a5c24fd2b00d66cd0
 
   toggle = () => {
     this.setState({
