@@ -6,19 +6,32 @@ import {  Form, FormGroup, Label, Input } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
 import "./View.css";
 
+function searchingFor(term) {
+    return function(x){
+      return x.name.toLowerCase().includes(term.toLowerCase()) || false;
+    }
+  }
+
 class View extends React.Component {
+    
+    state = {
+        items: [],
+        email:"",
+        term: ""
+    }
 
-    // componentDidMount(props) {
-    //     this.loadView(this.props.email);
-    // }
+    componentDidMount() {
+        this.loadView(this.email);
+    }
 
-    // //   loadView = email => {
-    // //     API.getItemsByName(email)
-    // //       .then(res => this.setState({ items: res.data }))
-    // //       .catch(err => console.log(err));
-    // //   };
+      loadView = (email) => {
+        API.getItems(email)
+          .then(res => this.setState({ items: res.data }))
+          .catch(err => console.log(err));
+      };
 
     render() {
+        const {term, items} = this.state;
         return (
     <div>
         
@@ -36,7 +49,17 @@ class View extends React.Component {
         
         <ItemJumbotron className="jumbo-background">
         <div className="item-display-container">
-          
+          {items.filter(searchingFor(term)).map(item => (
+            <Item
+              id={item._id}
+              key={item._id}
+              img={item.img}
+              name={item.name}
+              details={item.details}
+              postedBy={item.postedBy}
+              handleClicked={this.handleClicked}
+            />
+          ))};
         </div>
         </ItemJumbotron>
     </div>
