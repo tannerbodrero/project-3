@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./pages/home.js";
+import Home from "./pages/home";
 import Splash from "./pages/Splash";
 import Garage from "./pages/Garage";
 import View from "./pages/View";

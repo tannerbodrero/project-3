@@ -8,30 +8,28 @@ import "./View.css";
 
 class View extends React.Component {
 
-    componentDidMount(props) {
-        this.loadView(this.props.email);
-    }
+    // componentDidMount(props) {
+    //     this.loadView(this.props.email);
+    // }
 
-      loadView = email => {
-        API.getItemsByName(email)
-          .then(res => this.setState({ items: res.data }))
-          .catch(err => console.log(err));
-      };
+    // //   loadView = email => {
+    // //     API.getItemsByName(email)
+    // //       .then(res => this.setState({ items: res.data }))
+    // //       .catch(err => console.log(err));
+    // //   };
 
     render() {
         return (
-          <div>
-            
-
+    <div>
+        
         <h3 className="heading">
             Welcome to the View page!
         </h3>
         <Form className="searchbar-wrap">
-        <FormGroup>
-          
-          
-        </FormGroup>
-      </Form>
+            <FormGroup>
+
+            </FormGroup>
+        </Form>
         
         
        
@@ -41,7 +39,7 @@ class View extends React.Component {
           
         </div>
         </ItemJumbotron>
-          </div>
+    </div>
         );
       }
     }

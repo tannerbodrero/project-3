@@ -1,14 +1,19 @@
 import React from "react";
 import "../Item/item.css";
 import "./PostForm.css";
+import API from "../../utils/API";
+
 
 class PostForm extends React.Component {
   state = {
     itemName: "",
     owner: "",
+    lookingFor: "",
     img: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
     details: ""
   };
+
+  // Live updating to state
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -16,10 +21,24 @@ class PostForm extends React.Component {
     });
   };
 
-
+//Submit button click function
   handleFormSubmit = event => {
     event.preventDefault();
-    // grab current states and create item
+    
+    // grab current states 
+    let itemData = {
+      img: "",
+      name: this.state.itemName,
+      postedBy: this.props.user,
+      email: this.props.email,
+      details: this.state.details,
+      lookingFor: this.state.lookingFor,
+    }
+    
+    // Post the item to database
+    API.saveItem(itemData)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   render(props) {
@@ -47,6 +66,14 @@ class PostForm extends React.Component {
               onChange={this.handleInputChange}
               type="text"
               placeholder="Image URL"
+            />
+            <input
+              className="lookingFor-input-bar"
+              value={this.state.lookingFor}
+              name="lookingFor"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="Willing to exchange for..."
             />
             <input
               className="details-input-bar"

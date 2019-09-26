@@ -7,8 +7,8 @@ router.route("/")
   .post(userController.create);
 
 router
-  .route("/:name")
-  .get(userController.findByName)
+  .route("/:email")
+  .get(userController.findByEmail)
   .put(userController.update)
   .delete(userController.remove);
 
