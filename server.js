@@ -1,13 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
 const routes = require("./routes");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 const app = express();
-const aws = require("aws-sdk");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
 
 const PORT = process.env.PORT || 3001;
 

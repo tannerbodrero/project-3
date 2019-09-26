@@ -16,9 +16,7 @@ const imageUpload = multer({
   storage: multerS3({
     s3: s3,
     bucket: 'garage-trader-bucket',
-    metadata: function (req, file, cb) {
-      cb(null, {fieldName: file.fieldname});
-    },
+    acl: 'public-read',
     key: function (req, file, cb) {
       cb(null, path.basename(file.originalname, path.extname(file.originalname)) + "-" + Date.now().toString() + path.extname(file.originalname))
     }
@@ -29,12 +27,12 @@ const imageUpload = multer({
   }
 }).single("itemImage");
 
-/**
- * Check File Type
- * @param file
- * @param cb
- * @return {*}
- */
+// /**
+//  * Check File Type
+//  * @param file
+//  * @param cb
+//  * @return {*}
+//  */
 function checkFileType( file, cb ){
   // Allowed ext
   const filetypes = /jpeg|jpg|png|gif/;
@@ -49,11 +47,11 @@ function checkFileType( file, cb ){
   }
  }
 
- /**
- * @route POST api/profile/business-img-upload
- * @desc Upload post image
- * @access public
- */
+//  /**
+//  * @route POST api/profile/business-img-upload
+//  * @desc Upload post image
+//  * @access public
+//  */
 router.post( '/items-img-upload', ( req, res ) => {
   imageUpload( req, res, ( error ) => {
     // console.log( 'requestOkokok', req.file );
