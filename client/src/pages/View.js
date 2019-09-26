@@ -28,13 +28,7 @@ class View extends React.Component {
 
       loadView = email => {
         // console.log("This is the load email: " + email)
-        this.setState({CurrentEmail: email});
-        for (let i = 0; i < this.state.items.length; i++){
-            if(this.state.items[i]._email === email){
-              this.setState({currentEmail: this.state.items[i]});
-              console.log("This is current " + this.state.currentEmail);
-            }
-        };
+        
         API.getItemsByEmail(email)
           .then(res => this.setState({ items: res.data }))
           .catch(err => console.log(err));
