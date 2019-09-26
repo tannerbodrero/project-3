@@ -24,6 +24,7 @@ class PostForm extends React.Component {
 //Submit button click function
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log("hello world")
     
     // grab current states 
     let itemData = {
@@ -84,7 +85,8 @@ class PostForm extends React.Component {
               placeholder="Item Details"
             />
             <br />
-            <button className="form-button" onClick={() => this.handleFormSubmit}>
+            <button className="form-button" onClick={(event) => 
+              event.preventDefault(), this.handleFormSubmit}>
               Submit
             </button>
           </form>

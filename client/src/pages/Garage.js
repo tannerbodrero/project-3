@@ -110,7 +110,6 @@ export default withAuth(
               {button}
             </div>
           </div>
-
           <div className="bottom-div">{display}</div>
         </div>
       );
