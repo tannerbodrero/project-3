@@ -90,6 +90,7 @@ searchHandler(event){
         </ModalExample>
         
         <ItemJumbotron className="jumbo-background">
+          <h1 className="preview-text"> Click An Item For More Info </h1> 
         <div className="item-display-container">
           {items.filter(searchingFor(term)).map(item => (
             <Item

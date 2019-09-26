@@ -28,7 +28,7 @@ class PostForm extends React.Component {
     
     // grab current states 
     let itemData = {
-      img: "",
+      img: this.state.img,
       name: this.state.itemName,
       postedBy: this.props.user,
       email: this.props.email,

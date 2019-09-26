@@ -6,7 +6,7 @@ export default {
     return axios.get("/api/items");
   },
 
-  getItemsByEmail: function(email) {
+  getUserByEmail: function(email) {
     return axios.get("/api/user/" + email);
   },
 
