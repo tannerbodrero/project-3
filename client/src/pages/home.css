@@ -15,9 +15,9 @@ body {
 
 .heading {
     font-size:2rem;
+    font-family: 'Lora', serif;
     text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     color:yellow;
-    font-family:cursive;
     text-align:center;
     margin-top:3%;
     background-color: rgba(0,0,0,0.7);

@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const itemRoutes = require("./items");
 const userRoutes = require("./user");
+const aws = require("aws-sdk");
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const path = require("path");
 
 // specific routes from
 // localhost:PORT/api
@@ -11,16 +15,16 @@ module.exports = router;
 
 
 
- function middlewhere(req,res,next) {
+//  function middlewhere(req,res,next) {
 
-     if (authenticated) {
-         var token = req.headers.authenticated
-         next();
-        }
+//      if (authenticated) {
+//          var token = req.headers.authenticated
+//          next();
+//         }
         
-        else {
-            res.redirect("/");
-        }
-    }
+//         else {
+//             res.redirect("/");
+//         }
+//     }
 
-    app.get("/", middlewhere(), function())
+//     app.get("/", middlewhere(), function())
