@@ -22,8 +22,7 @@ class PostForm extends React.Component {
   };
 
 //Submit button click function
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = () => {
     console.log("hello world")
     
     // grab current states 

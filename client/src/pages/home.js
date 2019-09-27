@@ -22,10 +22,19 @@ class Home extends React.Component {
     term: "",
     idClicked: "",
     itemClicked: "",
-    modal: false
+    modal: false,
+    email: "pedromurillo96@gmail.com"
   }
   this.searchHandler = this.searchHandler.bind(this);
 };
+
+
+handleDataFromModal = (data) => {
+  this.setState({
+    email: data
+  });
+  this.loadItemsByEmail();
+}
 
 searchHandler(event){
     this.setState({ term : event.target.value })
@@ -33,8 +42,16 @@ searchHandler(event){
 }
 
   componentDidMount() {
+  
     this.loadItems();
+  // this.loadItemsByEmail();
   }
+
+  loadItemsByEmail= email => {
+    API.getItemsByName(email)
+      .then(res => this.setState({ items: res.data }))
+      .catch(err => console.log(err));
+  };
 
   loadItems = () => {
     API.getItems()
@@ -85,7 +102,7 @@ searchHandler(event){
           />
         </FormGroup>
       </Form>
-        <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
+        <ModalExample items={this.state.items} item={this.state.itemClicked} sendEmailToHome={this.handleDataFromModal} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
         
         </ModalExample>
         
