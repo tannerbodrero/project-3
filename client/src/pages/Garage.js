@@ -43,11 +43,11 @@ export default withAuth(
       this.setState({ email: idToken.idToken.claims.email });
     }
 
-    loadGarage = email => {
-      API.getItemsByName(email)
-        .then(res => this.setState({ items: res.data }))
-        .catch(err => console.log(err));
-    };
+    // loadGarage = email => {
+    //   API.getItemsByName(email)
+    //     .then(res => this.setState({ items: res.data }))
+    //     .catch(err => console.log(err));
+    // };
 
     render() {
 

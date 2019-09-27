@@ -20,19 +20,21 @@ class Home extends React.Component {
     term: "",
     idClicked: "",
     itemClicked: "",
-    modal: false
+    modal: false,
   }
   this.searchHandler = this.searchHandler.bind(this);
 };
 
-searchHandler(event){
-    this.setState({ term : event.target.value })
-    console.log(event.target.value);
-}
+  searchHandler(event){
+      this.setState({ term : event.target.value })
+      console.log(event.target.value);
+  };
 
-componentDidMount() {
+  componentDidMount() {
+  
     this.loadItems();
-}
+
+  };
 
 loadItems = () => {
     API.getItems()
@@ -83,7 +85,7 @@ handleClicked = id => {
           />
         </FormGroup>
       </Form>
-        <ModalExample items={this.state.items} item={this.state.itemClicked} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
+        <ModalExample items={this.state.items} item={this.state.itemClicked} sendEmailToHome={this.handleDataFromModal} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
         
         </ModalExample>
         

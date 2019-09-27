@@ -29,8 +29,7 @@ class ModalExample extends React.Component {
 
           </ModalBody>
           <ModalFooter className="footer-component">
-            <Button className="viewButton" href="/view" color="success" onClick={this.props.newToggle}>View more</Button>{' '}
-            <Button className="exchangeButton" color="primary" onClick={this.props.newToggle}>Request exchange</Button>{' '}
+            {/* <Button className="exchangeButton" color="primary" onClick={this.props.newToggle}>Request exchange</Button>{' '} */}
             <Button color="secondary" onClick={this.props.newToggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
