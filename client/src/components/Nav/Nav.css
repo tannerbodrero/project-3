@@ -17,6 +17,12 @@
     color:#fce9a0;
 }
 
+.nav-link {
+    color: black;
+    font-family: 'Lora', serif;
+    text-shadow: -1px 0 #b3a670, 0 1px #b3a670, 1px 0 #b3a670, 0 -1px #b3a670;
+}
+
 .logo {
     height: 4%;
     width:4%;

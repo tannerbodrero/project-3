@@ -3,10 +3,8 @@ import "./home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
-import {  Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input, } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
-
-
 
 function searchingFor(term) {
     return function(x){
@@ -38,13 +36,13 @@ class Home extends React.Component {
 
   };
 
-  loadItems = () => {
+loadItems = () => {
     API.getItems()
       .then(res => this.setState({ items: res.data }))
       .catch(err => console.log(err));
-  };
+};
 
-  handleClicked = id => {
+handleClicked = id => {
     // console.log("You click id " + id);
     this.setState({idClicked: id});
     for (let i = 0; i < this.state.items.length; i++){
@@ -56,8 +54,8 @@ class Home extends React.Component {
     this.setState({
       modal: !this.state.modal
     });
-    // console.log(this.state.modal);
-  };
+    // console.log(this.state.modal)
+};
 
   toggle = () => {
     this.setState({

@@ -20,7 +20,7 @@ class ModalExample extends React.Component {
           <ModalHeader className="header-component" toggle={this.props.newToggle}>{this.props.item.name}</ModalHeader>
           <ModalBody className="body-component">
           
-          <img className="item-image" src={this.props.item.img} alt="item-image" />
+          <img className="item-image" src={this.props.item.img} alt="item-tile-thumbnail" />
           <h5>Posted by: {this.props.item.postedBy}</h5>
           <h5>Email: {this.props.item.email}</h5>
           <h5>Details: {this.props.item.details}</h5>

@@ -3,14 +3,15 @@ import "../Item/item.css";
 import "./PostForm.css";
 import API from "../../utils/API";
 
-
 class PostForm extends React.Component {
   state = {
     itemName: "",
     owner: "",
+    details: "",
     lookingFor: "",
     img: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
-    details: ""
+    selectedFile: null,
+    selectedFiles: null
   };
 
   // Live updating to state
@@ -34,12 +35,19 @@ class PostForm extends React.Component {
       details: this.state.details,
       lookingFor: this.state.lookingFor,
     }
-    
+
     // Post the item to database
     API.saveItem(itemData)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
+
+  // singleFileChangedHandler = (event) => {
+  //   this.setState({
+  //     selectedFile: event.target.files[0]
+  //   });
+  // };
+
 
   render(props) {
 
@@ -48,8 +56,10 @@ class PostForm extends React.Component {
     return (
       <div className="form-component">
 
-          {/* Left side of the Page Form Here */}
+        {/* Left side of the Page Form Here */}
         <div className="form-wrap">
+          {/* For Alert box*/}
+          <div id="oc-alert-container"></div>
           <form className="post-form">
             <input
               className="itemName-input-bar"
@@ -84,7 +94,7 @@ class PostForm extends React.Component {
               placeholder="Item Details"
             />
             <br />
-            <button className="form-button" onClick={(event) => 
+            <button className="btn btn-info form-button" onClick={(event) => 
               event.preventDefault(), this.handleFormSubmit}>
               Submit
             </button>
@@ -94,7 +104,7 @@ class PostForm extends React.Component {
 
         {/* Live Item Preview */}
         <div className="preview-wrap">
-            <h1 className="preview-text"> Item Preview</h1>
+          <h1 className="preview-text"> Item Preview</h1>
           <div className="item-display-wrap">
             <div className="image-wrap">
               <img
