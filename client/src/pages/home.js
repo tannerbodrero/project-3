@@ -6,8 +6,6 @@ import ItemJumbotron from "../components/ItemJumbotron";
 import { Form, FormGroup, Label, Input, } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
 
-
-
 function searchingFor(term) {
     return function(x){
       return x.name.toLowerCase().includes(term.toLowerCase()) || false;

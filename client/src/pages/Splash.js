@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Splash.css";
-import Jumbotron from "../components/ItemJumbotron";
-// import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Container } from "../components/Grid";
+import SplashButtons from "../components/SplashButtons/SplashButtons"
+
+
 
 class Splash extends Component {
   state = {
@@ -37,22 +37,15 @@ class Splash extends Component {
   };
 
   render() {
+
+
     return (
       <Container fluid>
 
         <div className="splash-jumbo">
           <h1 className="logo-text">GARAGE</h1><img className="splash-logo" src="/box3.png" alt="logo"/><h1 className="logo-text">TRADER</h1>
         </div>
-        <div className="button-wrap">
-
-            <Link className="splash-link" to="/home"><button className="splash-button">JUST BROWSING</button></Link>
-
-            <Link className="splash-link" to="/garage"><button className="splash-button">SIGN UP or SIGN IN</button></Link>
-          
-        </div>
-
-        
-
+        <SplashButtons />
       </Container>
     );
   }
