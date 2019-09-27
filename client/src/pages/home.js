@@ -1,9 +1,9 @@
 import React from "react";
-import "./home.css";
+import "./Home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
-import {Form, FormGroup, Label, Input} from 'reactstrap';
+import { Form, FormGroup, Label, Input, } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
 
 function searchingFor(term) {
