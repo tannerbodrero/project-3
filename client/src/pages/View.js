@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
 import {  Form, FormGroup, Label, Input } from 'reactstrap';
-import ModalExample from "../components/Modal/index"
 import "./View.css";
 
 
