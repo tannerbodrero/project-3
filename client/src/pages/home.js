@@ -23,34 +23,19 @@ class Home extends React.Component {
     idClicked: "",
     itemClicked: "",
     modal: false,
-    email: "pedromurillo96@gmail.com"
   }
   this.searchHandler = this.searchHandler.bind(this);
 };
 
-
-handleDataFromModal = (data) => {
-  this.setState({
-    email: data
-  });
-  this.loadItemsByEmail();
-}
-
-searchHandler(event){
-    this.setState({ term : event.target.value })
-    console.log(event.target.value);
-}
+  searchHandler(event){
+      this.setState({ term : event.target.value })
+      console.log(event.target.value);
+  };
 
   componentDidMount() {
   
     this.loadItems();
-  // this.loadItemsByEmail();
-  }
 
-  loadItemsByEmail= email => {
-    API.getItemsByName(email)
-      .then(res => this.setState({ items: res.data }))
-      .catch(err => console.log(err));
   };
 
   loadItems = () => {
