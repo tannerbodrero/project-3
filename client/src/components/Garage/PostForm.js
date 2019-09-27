@@ -10,8 +10,8 @@ class PostForm extends React.Component {
     details: "",
     lookingFor: "",
     img: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
-    selectedFile: null,
-    selectedFiles: null
+    // selectedFile: null,
+    // selectedFiles: null
   };
 
   // Live updating to state
@@ -59,7 +59,7 @@ class PostForm extends React.Component {
         {/* Left side of the Page Form Here */}
         <div className="form-wrap">
           {/* For Alert box*/}
-          <div id="oc-alert-container"></div>
+          {/* <div id="oc-alert-container"></div> */}
           <form className="post-form">
             <input
               className="itemName-input-bar"
