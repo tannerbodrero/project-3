@@ -1,12 +1,8 @@
 import React from "react";
 import API from "../utils/API";
 import ItemJumbotron from "../components/ItemJumbotron";
-<<<<<<< HEAD
-import {  Form, FormGroup, Label, Input } from 'reactstrap';
-=======
 import {  Form, FormGroup } from 'reactstrap';
 import ModalExample from "../components/Modal/index"
->>>>>>> 8480ab4b2d712c04b6cb27a9186ca75449707a82
 import "./View.css";
 
 

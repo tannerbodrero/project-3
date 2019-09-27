@@ -5,11 +5,12 @@ const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const path = require("path");
+const config = require("../../config/config");
 
 const s3 = new aws.S3({
-  accessKeyId: "AKIA2P7KGCKAO2C7MNCE",
-  secretAccessKey: "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",
-  Bucket: "garage-trader-bucket"
+  accessKeyId: config.aws.apiKey,
+  secretAccessKey: config.aws.secret,
+  Bucket: config.aws.bucket,
 });
 
 const imageUpload = multer({
