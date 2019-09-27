@@ -8,7 +8,7 @@ class SignInWidget extends React.Component {
 
     signInWidgetConfig = {
 
-        logo: 'https://logo.clearbit.com/okta.com',
+        logo: "https://vignette.wikia.nocookie.net/hellraiser/images/2/2b/Box.png/revision/latest?cb=20160204114708",
         language: 'en',
         i18n: {
 

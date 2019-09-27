@@ -1,10 +1,15 @@
 import React from "react";
 import "./item.css";
+import { useSpring, animated } from "react-spring";
 
 function Item(props) {
-  // console.log(props);
+
+const fade = useSpring({ config : {duration: 1500},
+  from: {opacity:0}, to: {opacity:1},
+});
   return (
-    <div
+    <animated.div 
+      style={fade}
       className="item-display-wrap"
       id={props._id}
       onClick={() => props.handleClicked(props.id)}
@@ -16,7 +21,7 @@ function Item(props) {
       <h3 className="item-name"> {props.name} </h3>
       <p className="item-owner"> Item Owner: {props.postedBy} </p>
       {/* <p className="item-details"> Details: {props.details} </p> */}
-    </div>
+    </animated.div>
   );
 }
 
