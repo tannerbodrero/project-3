@@ -1,14 +1,10 @@
 import React from "react";
-import "./Home.css";
-import Jumbotron from "../components/Jumbotron";
+import "./home.css";
 import API from "../utils/API";
 import Item from "../components/Item/Item";
 import ItemJumbotron from "../components/ItemJumbotron";
-import temporary from "../components/temporary-items.json";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Form, FormGroup, Label, Input} from 'reactstrap';
 import ModalExample from "../components/Modal/index"
-
-
 
 function searchingFor(term) {
     return function(x){

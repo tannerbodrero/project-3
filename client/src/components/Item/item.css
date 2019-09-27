@@ -3,13 +3,12 @@
     width: 300px;
     box-shadow: -0.3em 0 .3em #b3a670;
     border-radius: 5%;
-    /* background-color:#593f14; */
-    background: linear-gradient(to bottom, #3f2b0a 0%, #c1ab53 75%) ;
+    background: linear-gradient(to bottom, #3f2b0a 0%, #c1ab53 75%);
     max-height:300px;
     max-width:300px;
     border: 1px solid black;
-    margin-top: 15px;
     transition:0.2s;
+    margin: 15px auto;
 }
 .image-wrap {
     height:200px;
