@@ -8,7 +8,7 @@ import ModalExample from "../components/Modal/index"
 
 function searchingFor(term) {
     return function(x){
-      return x.name.toLowerCase().includes(term.toLowerCase()) || false;
+      return x.name.toLowerCase().includes(term.toLowerCase()) || x.postedBy.toLowerCase().includes(term.toLowerCase()) || false;
     }
   }
 
@@ -79,15 +79,13 @@ handleClicked = id => {
             type="text"
             name="search"
             id="exampleSearch"
-            placeholder="Search for an Item to Trade for"
+            placeholder="Search by item name or username"
             onChange={this.searchHandler}
             value={term}
           />
         </FormGroup>
       </Form>
-        <ModalExample items={this.state.items} item={this.state.itemClicked} sendEmailToHome={this.handleDataFromModal} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}>
-        
-        </ModalExample>
+        <ModalExample items={this.state.items} item={this.state.itemClicked} sendEmailToHome={this.handleDataFromModal} handleClicked={this.handleClicked} newModal={this.state.modal} newToggle={this.toggle}></ModalExample>
         
         <ItemJumbotron className="jumbo-background">
           <h1 className="preview-text"> Click An Item For More Info </h1> 
